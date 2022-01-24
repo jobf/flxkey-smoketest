@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
+import flixel.input.keyboard.FlxKey;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.tweens.misc.ColorTween;
@@ -21,12 +22,14 @@ class PlayState extends FlxState
 		textWTF = new FlxText(0, 0, FlxG.width, "Press any key to test ANY key was pressed, click mouse to test NONE key was ... not pressed?", 25);
 		add(textWTF);
 
-		textANY = new FlxText(0, 0, 0, "ANY", 50);
+		var any:Int = FlxKey.ANY;
+		textANY = new FlxText(0, 0, 0, 'ANY $any', 50);
 		textANY.screenCenter();
 		textANY.y -= 50;
 		add(textANY);
 
-		textNONE = new FlxText(0, 0, 0, "NONE", 50);
+		var none:Int = FlxKey.NONE;
+		textNONE = new FlxText(0, 0, 0, 'NONE $none', 50);
 		textNONE.screenCenter();
 		textNONE.y += 50;
 		add(textNONE);
@@ -37,7 +40,8 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		if (FlxG.keys.justPressed.ANY)
 		{
-			trace("ANY");
+			var any:Int = FlxKey.ANY;
+			trace('ANY $any');
 			if (tweenTextANY != null)
 			{
 				tweenTextANY.cancel();
@@ -47,7 +51,8 @@ class PlayState extends FlxState
 		}
 		if (FlxG.mouse.justPressed && FlxG.keys.justPressed.NONE)
 		{
-			trace("NONE");
+			var none:Int = FlxKey.NONE;
+			trace('NONE $none');
 			if (tweenTextNONE != null)
 			{
 				tweenTextNONE.cancel();
