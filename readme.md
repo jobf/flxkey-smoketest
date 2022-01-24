@@ -6,7 +6,7 @@ To prevent this one can change the integers used for ANY and NONE to be positive
 
 ## Why is this repo?
 
-A pull request has been made to address the issue in flixel - 
+A pull request has been made to address the issue in flixel - https://github.com/HaxeFlixel/flixel/pull/2487
 
 This repo contains a tiny flixel program for testing that the keys still work.
 
